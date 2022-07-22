@@ -10,8 +10,10 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
+    let userDefaults = UserDefaults(suiteName: "group.WidgetKit_practice")
+    
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), text: "", textColor: Color.black, backgroundColor: .white, configuration: ConfigurationIntent())
+        return SimpleEntry(date: Date(), text: "", textColor: Color.black, backgroundColor: .white, configuration: ConfigurationIntent())
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
@@ -21,13 +23,10 @@ struct Provider: IntentTimelineProvider {
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-        
-        let userDefaults = UserDefaults(suiteName: "group.WidgetKit_Barebones")
+
         let text = userDefaults?.value(forKey: "text") as? String ?? "I'm your widget!"
-        guard let textColorComponents = userDefaults?.object(forKey: "textColor") as? [CGFloat] else { return }
-        let textColor = Color(.sRGB, red: textColorComponents[0], green: textColorComponents[1], blue: textColorComponents[2], opacity: textColorComponents[3])
-        guard let backgroundColorComponents = userDefaults?.object(forKey: "backgroundColor") as? [CGFloat] else { return }
-        let backgroundColor = Color(.sRGB, red: backgroundColorComponents[0], green: backgroundColorComponents[1], blue: backgroundColorComponents[2], opacity: backgroundColorComponents[3])
+        let textColor = userDefaults?.getColor(forKey: "textColor") ?? Color.black
+        let backgroundColor = userDefaults?.getColor(forKey: "backgroundColor") ?? Color.white
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
@@ -40,6 +39,7 @@ struct Provider: IntentTimelineProvider {
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
+    
 }
 
 struct SimpleEntry: TimelineEntry {
@@ -73,5 +73,13 @@ struct MyWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
+    }
+}
+
+extension UserDefaults {
+    func getColor(forKey key: String) -> Color? {
+        guard let components = self.object(forKey: key) as? [CGFloat] else { return nil }
+        let color = Color(.sRGB, red: components[0], green: components[1], blue: components[2], opacity: components[3])
+        return color
     }
 }

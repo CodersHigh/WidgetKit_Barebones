@@ -392,7 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetKit_Barebones/Preview Content\"";
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -405,7 +405,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "codershigh.WidgetKit-Barebones";
+				PRODUCT_BUNDLE_IDENTIFIER = "roun.WidgetKit-Barebones";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -423,7 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WidgetKit_Barebones/Preview Content\"";
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -436,7 +436,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "codershigh.WidgetKit-Barebones";
+				PRODUCT_BUNDLE_IDENTIFIER = "roun.WidgetKit-Barebones";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -452,7 +452,7 @@
 				CODE_SIGN_ENTITLEMENTS = MyWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
@@ -463,7 +463,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "codershigh.WidgetKit-Barebones.MyWidget";
+				PRODUCT_BUNDLE_IDENTIFIER = "roun.WidgetKit-Barebones.MyWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -480,7 +480,7 @@
 				CODE_SIGN_ENTITLEMENTS = MyWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4QG3GC35LA;
+				DEVELOPMENT_TEAM = 9GHM5422CF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
@@ -491,7 +491,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "codershigh.WidgetKit-Barebones.MyWidget";
+				PRODUCT_BUNDLE_IDENTIFIER = "roun.WidgetKit-Barebones.MyWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

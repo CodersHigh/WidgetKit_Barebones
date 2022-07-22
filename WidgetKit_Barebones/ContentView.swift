@@ -9,9 +9,10 @@ import SwiftUI
 import WidgetKit
 
 struct ContentView: View {
-    @State var text: String = "I'm your widget!"
-    @State var textColor: Color = Color.black
-    @State var backgroundColor: Color = Color.white
+    static let userDefaults = UserDefaults(suiteName: "group.WidgetKit_practice")
+    @State var text: String = userDefaults?.string(forKey: "text") ?? "I'm your widget!"
+    @State var textColor: Color = userDefaults?.getColor(forKey: "textColor") ?? Color.black
+    @State var backgroundColor: Color = userDefaults?.getColor(forKey: "backgroundColor") ?? Color.white
     
     var body: some View {
         VStack {
@@ -37,15 +38,22 @@ struct ContentView: View {
             .frame(width: 300, height: 200)
             
             Button("적용") {
-                let userDefaults = UserDefaults(suiteName: "group.WidgetKit_Barebones")
+                let userDefaults = UserDefaults(suiteName: "group.WidgetKit_practice")
                 userDefaults?.setValue(text, forKey: "text")
                 userDefaults?.set(textColor.cgColor?.components, forKey: "textColor")
                 userDefaults?.set(backgroundColor.cgColor?.components, forKey: "backgroundColor")
-                
                 WidgetCenter.shared.reloadAllTimelines()
             }
             .buttonStyle(.borderedProminent)
             .disabled(text.trimmingCharacters(in: .whitespaces).isEmpty)
         }
+    }
+}
+
+extension UserDefaults {
+    func getColor(forKey key: String) -> Color? {
+        guard let components = self.object(forKey: key) as? [CGFloat] else { return nil }
+        let color = Color(.sRGB, red: components[0], green: components[1], blue: components[2], opacity: components[3])
+        return color
     }
 }
